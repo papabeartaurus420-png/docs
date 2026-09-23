@@ -209,30 +209,6 @@ session = await client.create_session(
 {% codetab go %}
 
 ```golang
-package main
-
-import (
-	"context"
-	copilot "github.com/github/copilot-sdk/go"
-	"github.com/github/copilot-sdk/go/rpc"
-)
-
-func main() {
-	ctx := context.Background()
-	client := copilot.NewClient(nil)
-
-	session, _ := client.CreateSession(ctx, &copilot.SessionConfig{
-		SkillDirectories: []string{"./skills"},
-		DisabledSkills:   []string{"experimental-feature", "deprecated-tool"},
-		OnPermissionRequest: func(req copilot.PermissionRequest, inv copilot.PermissionInvocation) (rpc.PermissionDecision, error) {
-			return &rpc.PermissionDecisionApproveOnce{}, nil
-		},
-	})
-	_ = session
-}
-```
-
-```golang
 session, _ := client.CreateSession(context.Background(), &copilot.SessionConfig{
     SkillDirectories: []string{"./skills"},
     DisabledSkills:   []string{"experimental-feature", "deprecated-tool"},
@@ -241,27 +217,6 @@ session, _ := client.CreateSession(context.Background(), &copilot.SessionConfig{
 
 {% endcodetab %}
 {% codetab dotnet %}
-
-```csharp
-using GitHub.Copilot;
-using GitHub.Copilot.Rpc;
-
-public static class SkillsExample
-{
-    public static async Task Main()
-    {
-        await using var client = new CopilotClient();
-
-        var session = await client.CreateSessionAsync(new SessionConfig
-        {
-            SkillDirectories = new List<string> { "./skills" },
-            DisabledSkills = new List<string> { "experimental-feature", "deprecated-tool" },
-            OnPermissionRequest = (req, inv) =>
-                Task.FromResult(PermissionDecision.ApproveOnce()),
-        });
-    }
-}
-```
 
 ```csharp
 var session = await client.CreateSessionAsync(new SessionConfig
@@ -418,6 +373,6 @@ If multiple skills provide conflicting instructions:
 
 ## See also
 
-* [AUTOTITLE](/copilot/how-tos/copilot-sdk/getting-started#create-custom-agents) - Define specialized AI personas
-* [AUTOTITLE](/copilot/how-tos/copilot-sdk/getting-started#step-4-add-a-custom-tool) - Build your own tools
+* [AUTOTITLE](/copilot/get-started/sdk-quickstart#create-custom-agents) - Define specialized AI personas
+* [AUTOTITLE](/copilot/get-started/sdk-quickstart#step-4-add-a-custom-tool) - Build your own tools
 * [AUTOTITLE](/copilot/how-tos/copilot-sdk/features/mcp) - Connect external tool providers

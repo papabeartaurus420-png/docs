@@ -534,23 +534,6 @@ const session = await client.createSession({
 
 For Azure OpenAI endpoints (`*.openai.azure.com`), use the correct type:
 
-<!-- docs-validate: hidden -->
-
-```typescript
-import { CopilotClient } from "@github/copilot-sdk";
-
-const client = new CopilotClient();
-const session = await client.createSession({
-    model: "gpt-5.4",
-    provider: {
-        type: "azure",
-        baseUrl: "https://my-resource.openai.azure.com",
-    },
-});
-```
-
-<!-- /docs-validate: hidden -->
-
 ```typescript
 // ❌ Wrong: Using "openai" type with native Azure endpoint
 provider: {
@@ -566,23 +549,6 @@ provider: {
 ```
 
 However, if your Microsoft Foundry deployment provides an OpenAI-compatible endpoint path (for example, `/openai/v1/`), use `type: "openai"`:
-
-<!-- docs-validate: hidden -->
-
-```typescript
-import { CopilotClient } from "@github/copilot-sdk";
-
-const client = new CopilotClient();
-const session = await client.createSession({
-    model: "gpt-5.4",
-    provider: {
-        type: "openai",
-        baseUrl: "https://your-resource.openai.azure.com/openai/v1/",
-    },
-});
-```
-
-<!-- /docs-validate: hidden -->
 
 ```typescript
 // ✅ Correct: OpenAI-compatible Microsoft Foundry endpoint
@@ -628,4 +594,4 @@ foundry model run phi-4-mini
 ## Next steps
 
 * [AUTOTITLE](/copilot/how-tos/copilot-sdk/auth) - Learn about all authentication methods
-* [AUTOTITLE](/copilot/how-tos/copilot-sdk/getting-started) - Build your first Copilot-powered app
+* [AUTOTITLE](/copilot/get-started/sdk-quickstart) - Build your first Copilot-powered app

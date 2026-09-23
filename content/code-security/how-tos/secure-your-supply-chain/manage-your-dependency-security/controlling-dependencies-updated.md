@@ -212,7 +212,7 @@ Here are some examples showing how `update-types` can be used with `allow`.
          - dependency-type: "development"
            update-types:
              - "version-update:semver-minor"
-             - "version-update:semver-patch
+             - "version-update:semver-patch"
    ```
 
   In this example, production dependencies will only receive patch updates, while development dependencies will receive both minor and patch updates.
@@ -307,7 +307,6 @@ updates:
   schedule:
     interval: daily
   open-pull-requests-limit: 20
-  rebase-strategy: "disabled"
   # Increase the version requirements for pip
   # only when required
   versioning-strategy: increase-if-necessary

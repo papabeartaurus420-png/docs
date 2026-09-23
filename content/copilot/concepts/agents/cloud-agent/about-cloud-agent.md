@@ -48,7 +48,7 @@ When you delegate tasks to {% data variables.copilot.copilot_cloud_agent %}, you
 
 While working on a coding task, {% data variables.copilot.copilot_cloud_agent %} has access to its own ephemeral development environment, powered by {% data variables.product.prodname_actions %}, where it can explore your code, make changes, execute automated tests and linters and more.
 
-> [!NOTE] Deep research, planning, and iterating on code changes before creating a pull request are only available with {% data variables.copilot.copilot_cloud_agent %} on {% data variables.product.prodname_dotcom_the_website %}. {% data variables.copilot.copilot_cloud_agent_short_cap_c %} integrations (such as Azure Boards, JIRA, Linear, Slack, or Teams) only support creating a pull request directly.
+> [!NOTE] Deep research, planning, and iterating on code changes before creating a pull request are only available with {% data variables.copilot.copilot_cloud_agent %} on {% data variables.product.prodname_dotcom_the_website %}, and in {% data variables.release-phases.public_preview %} for the Microsoft Teams and Slack integrations. Other {% data variables.copilot.copilot_cloud_agent_short %} integrations (such as Azure Boards, JIRA, or Linear) only support creating a pull request directly.
 
 ### Benefits over traditional AI workflows
 
@@ -90,11 +90,15 @@ The {% data variables.product.prodname_copilot_short %} usage metrics APIs inclu
 * The number of pull requests created by {% data variables.copilot.copilot_cloud_agent %} that have been merged
 * Median time to merge for merged pull requests, including pull requests created by {% data variables.copilot.copilot_cloud_agent %}
 
-These metrics can help you track adoption of {% data variables.copilot.copilot_cloud_agent %} and monitor changes in pull request throughput and time to merge over time. See [AUTOTITLE](/copilot/concepts/copilot-usage-metrics/copilot-metrics).
+These metrics can help you track adoption of {% data variables.copilot.copilot_cloud_agent %} and monitor changes in pull request throughput and time to merge over time. See [AUTOTITLE](/copilot/concepts/billing-and-usage/copilot-usage-metrics/copilot-metrics).
 
 ## Integrating {% data variables.copilot.copilot_cloud_agent %} with third-party tools
 
-You can also invoke {% data variables.copilot.copilot_cloud_agent %} from external tools, allowing you to assign tasks to {% data variables.product.prodname_copilot_short %}, provide context, and open pull requests without leaving your workflow. See [AUTOTITLE](/copilot/concepts/tools/about-copilot-integrations)
+You can invoke {% data variables.copilot.copilot_cloud_agent %} from external tools, allowing you to assign tasks to {% data variables.product.prodname_copilot_short %}, provide context, and open pull requests without leaving your workflow.
+
+Use {% data variables.copilot.copilot_cloud_agent %} in Microsoft Teams and Slack to collaborate with your team on agent-assisted work. You can @mention {% data variables.product.github %} in channels, threads, and direct messages to work alongside teammates and {% data variables.product.prodname_copilot_short %} on research, planning, and coding tasks. Teammates can add context, steer {% data variables.product.prodname_copilot_short %} sessions, monitor progress, and then review the resulting artifacts.
+
+For more information, see [AUTOTITLE](/copilot/concepts/tools/about-copilot-integrations).
 
 ## Making {% data variables.copilot.copilot_cloud_agent %} available
 
@@ -104,7 +108,7 @@ If you are a {% data variables.copilot.copilot_for_business %} or {% data variab
 
 Repository owners can choose to opt out some or all repositories from {% data variables.copilot.copilot_cloud_agent %}.
 
-See [AUTOTITLE](/copilot/concepts/agents/cloud-agent/access-management).
+See [AUTOTITLE](/copilot/concepts/enterprise/cloud-agent-access).
 
 ## AI models for {% data variables.copilot.copilot_cloud_agent %}
 
@@ -128,7 +132,7 @@ The more {% data variables.copilot.copilot_cloud_agent %} knows about the code i
 
 {% data variables.copilot.copilot_cloud_agent %} uses {% data variables.product.prodname_actions %} minutes and {% data variables.product.prodname_ai_credits_short %}. The {% data variables.product.prodname_ai_credits_short %} consumed depend on the model used and the number of tokens processed during the session.
 
-Within your included {% data variables.product.prodname_actions %} minutes and {% data variables.product.prodname_ai_credits_short %}, you can use {% data variables.copilot.copilot_cloud_agent %} without incurring additional costs. See [AUTOTITLE](/copilot/concepts/billing/usage-based-billing-for-organizations-and-enterprises).
+Within your included {% data variables.product.prodname_actions %} minutes and {% data variables.product.prodname_ai_credits_short %}, you can use {% data variables.copilot.copilot_cloud_agent %} without incurring additional costs. See [AUTOTITLE](/copilot/concepts/billing-and-usage/organizations-and-enterprises/billing).
 
 {% data variables.product.prodname_copilot_short %} code review also consumes {% data variables.product.prodname_actions %} minutes on private repositories. See [AUTOTITLE](/billing/concepts/product-billing/github-actions#copilot-code-review-and-github-actions-minutes).
 

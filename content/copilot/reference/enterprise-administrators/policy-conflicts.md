@@ -15,7 +15,7 @@ contentType: reference
 
 ## About delegating policy decisions to organizations
 
-Policies can be defined for a whole enterprise, or set at the organization level. See [AUTOTITLE](/copilot/concepts/policies).
+Policies can be defined for a whole enterprise, or set at the organization level. See [AUTOTITLE](/copilot/concepts/enterprise/policies).
 
 When an enterprise owner delegates control of a policy to organization owners by setting "No policy," some organizations may enable a feature while others disable it. Users may be granted a {% data variables.product.prodname_copilot_short %} license by organizations with different policies for the same feature.
 
@@ -42,7 +42,7 @@ Feature, model, and privacy settings for users are set according to the **least 
 | {% data variables.product.prodname_copilot_short %} can search the web | Least restrictive organization | [AUTOTITLE](/copilot/responsible-use/chat) |
 | {% data variables.copilot.copilot_mobile_short %} | Least restrictive organization | [AUTOTITLE](/copilot/responsible-use/chat) |
 | {% data variables.copilot.copilot_chat_short %} in the IDE | Least restrictive organization | [AUTOTITLE](/copilot/responsible-use/chat) |
-| {% data variables.copilot.copilot_chat_short %} agent mode in the IDE | Least restrictive organization | [AUTOTITLE](/copilot/responsible-use/chat) |
+| {% data variables.product.prodname_copilot_short %} Agent Mode in IDE Chat | Least restrictive organization | [AUTOTITLE](/copilot/responsible-use/chat) |
 | {% data variables.copilot.copilot_code-review_short %} | Least restrictive organization | [AUTOTITLE](/copilot/responsible-use/agents) |
 | {% data variables.copilot.copilot_cloud_agent %} | Least restrictive organization | [AUTOTITLE](/copilot/responsible-use/agents) |
 | {% data variables.product.prodname_spark_short %} | Least restrictive organization | [AUTOTITLE](/copilot/responsible-use/agents) |

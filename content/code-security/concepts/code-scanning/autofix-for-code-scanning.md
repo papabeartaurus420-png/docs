@@ -2,7 +2,7 @@
 title: About autofix for code scanning
 shortTitle: Autofix
 allowTitleToDifferFromFilename: true
-intro: 'Autofix provides targeted recommendations to help you fix {% data variables.product.prodname_code_scanning %} alerts and avoid introducing new security vulnerabilities.'
+intro: 'Autofix automatically generates fixes for {% data variables.product.prodname_code_scanning %} alerts, helping you remediate existing vulnerabilities.'
 product: '{% data reusables.rai.code-scanning.gated-feature-autofix %}'
 versions:
   feature: code-scanning-autofix
@@ -23,7 +23,8 @@ There are two ways to get a fix for an alert: agentic autofix and {% data variab
 
 ## Agentic autofix
 
-> [!NOTE] This feature is currently in public preview and is subject to change.
+> [!NOTE]
+> This feature is currently in public preview and is subject to change. {% data reusables.copilot.preview-features-policy %}
 
 Assign a {% data variables.product.prodname_code_scanning %} alert to {% data variables.product.prodname_copilot_short %} to have it resolve the alert for you. Assigning an alert starts an agent session: {% data variables.copilot.copilot_cloud_agent %} calls tools to explore your codebase beyond the affected file, generates a fix, validates it (for example, by re-running {% data variables.product.prodname_codeql %}), and iterates until it opens a pull request with the changes. See [AUTOTITLE](/code-security/how-tos/manage-security-alerts/manage-code-scanning-alerts/resolve-alerts#fixing-alerts-with-copilot).
 

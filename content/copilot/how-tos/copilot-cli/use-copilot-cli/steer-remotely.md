@@ -128,7 +128,7 @@ A {% data variables.copilot.copilot_cli_short %} session is available in {% data
 ### Use a QR code to quickly open a session on your phone
 
 1. In an interactive session, enter the `/remote` slash command to redisplay the remote session details.
-1. Press <kbd>Ctrl</kbd>+<kbd>E</kbd> to toggle on/off display of a QR code.
+1. Press <kbd>Ctrl</kbd>+<kbd>O</kbd> (letter O) to toggle on/off display of a QR code.
 
    > [!NOTE]
    > This keyboard shortcut expands/collapses all details in the session conversation, not just the QR code. It only works if the input field is currently empty.
@@ -168,7 +168,7 @@ Remote control is disabled by default, but may be enabled in your {% data variab
 * **For a single session**: Start the CLI with `--no-remote` to prevent remote control for that session, regardless of your settings file value.
 * **Permanently**: Remove the `"remoteSessions": true` setting from `~/.copilot/settings.json`, or set it to `false`.
 
-Enterprise owners can also restrict remote control of sessions hosted on your device using enterprise managed settings, regardless of your personal settings. Depending on the configured policy, remote control of sessions on your device may be disabled entirely, or only available to a controlling client that is SSO-authorized for specific organizations. This doesn't affect your ability to remotely control your own sessions hosted on other devices. See [AUTOTITLE](/copilot/reference/enterprise-managed-settings-reference).
+Enterprise owners can also restrict remote control of sessions hosted on your device using enterprise managed settings, regardless of your personal settings. Depending on the configured policy, remote control of sessions on your device may be disabled entirely, or only available to a controlling client that is SSO-authorized for specific organizations. This doesn't affect your ability to remotely control your own sessions hosted on other devices. See [AUTOTITLE](/copilot/reference/enterprise-administrators/enterprise-managed-settings).
 
 ## Further reading
 

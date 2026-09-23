@@ -32,6 +32,7 @@ jobs:
         env:
           # need to use a token from a user with access to github/github for this step
           GITHUB_TOKEN: ${{ secrets.DOCS_BOT_PAT_BASE }}
+          NODE_OPTIONS: '--max-old-space-size=8192'
         run: npm run sync-graphql
       - name: Create pull request
         id: create-pull-request
@@ -51,7 +52,7 @@ jobs:
             "Hello! Some GraphQL data in github/github was updated recently. This PR
             syncs up the GraphQL data in this repo.\n\n
             If CI passes, this PR will be auto-merged. :green_heart:\n\n
-            If CI does not pass or other problems arise, contact #docs-engineering on slack."
+            If CI does not pass or other problems arise, contact #technical-content on slack."
           branch: graphql-schema-update
 
       - name: Enable GitHub auto-merge
@@ -95,7 +96,7 @@ jobs:
         with:
           slack_token: ${{ secrets.SLACK_DOCS_BOT_TOKEN }}
           message: |
-            ⚠️ GraphQL Sync found ${{ needs.update_graphql_files.outputs.ignored-count }} ignored change types: ${{ needs.update_graphql_files.outputs.ignored-types }}
+            :graphql: GraphQL Sync found ${{ needs.update_graphql_files.outputs.ignored-count }} ignored change types: ${{ needs.update_graphql_files.outputs.ignored-types }}
 
             These change types are not in CHANGES_TO_REPORT and were silently ignored. Consider reviewing if they should be added to the changelog.
 

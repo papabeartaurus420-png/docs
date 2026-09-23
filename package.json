@@ -83,7 +83,6 @@
     "purge-fastly": "tsx src/workflows/purge-fastly.ts",
     "purge-fastly-changed-content": "tsx src/workflows/purge-fastly-changed-content.ts",
     "wait-for-build": "tsx src/workflows/wait-for-build.ts",
-    "readability-report": "tsx src/workflows/experimental/readability-report.ts",
     "ready-for-docs-review": "tsx src/workflows/ready-for-docs-review.ts",
     "release-banner": "tsx src/ghes-releases/scripts/release-banner.ts",
     "repo-sync": "./src/workflows/local-repo-sync.sh",
@@ -91,6 +90,7 @@
     "liquid-tags": "tsx src/content-render/scripts/liquid-tags.ts",
     "check-links-pr": "tsx src/links/scripts/check-links-pr.ts",
     "check-links-internal": "tsx src/links/scripts/check-links-internal.ts",
+    "combine-link-reports": "tsx src/links/scripts/combine-link-reports.ts",
     "check-links-external": "tsx src/links/scripts/check-links-external.ts",
     "rest-dev": "tsx src/rest/scripts/update-files.ts",
     "show-action-deps": "echo 'Action Dependencies:' && rg '^[\\s|-]*(uses:.*)$' .github -I -N --no-heading -r '$1$2' | sort | uniq | cut -c 7-",
@@ -124,7 +124,7 @@
     "warmup-remotejson": "tsx src/archives/scripts/warmup-remotejson.ts",
     "what-docs-early-access-branch": "tsx src/early-access/scripts/what-docs-early-access-branch.ts",
     "writers": "tsx src/workflows/writers-help-metadata.ts",
-    "postinstall": "npx --no-install patch-package"
+    "postinstall": "npx --no-install patch-package --error-on-fail"
   },
   "lint-staged": {
     "*.{ts,tsx}": "eslint --cache --fix",
@@ -171,7 +171,7 @@
   },
   "dependencies": {
     "@elastic/elasticsearch": "8.19.1",
-    "@github/failbot": "0.8.3",
+    "@github/failbot": "1.1.1",
     "@github/hydro-analytics-client": "^2.4.1",
     "@gr2m/gray-matter": "4.0.3-with-pr-137",
     "@horizon-rs/language-guesser": "0.1.1",
@@ -192,7 +192,7 @@
     "@primer/octicons-react": "^19.22.0",
     "@primer/primitives": "^11.3.1",
     "@primer/react": "38.19.0",
-    "@primer/react-brand": "^0.70.0",
+    "@primer/react-brand": "^0.75.1",
     "accept-language-parser": "^1.5.0",
     "ajv": "^8.18.0",
     "ajv-errors": "^3.0.0",
@@ -206,7 +206,6 @@
     "cookie-parser": "^1.4.7",
     "cuss": "2.2.0",
     "dayjs": "^1.11.19",
-    "dereference-json-schema": "^0.2.1",
     "dotenv": "^17.3.1",
     "escape-string-regexp": "5.0.0",
     "express": "^5.2.1",
@@ -243,13 +242,12 @@
     "mdast-util-to-markdown": "2.1.2",
     "mdast-util-to-string": "^4.0.0",
     "micromark-extension-gfm": "^3.0.0",
-    "next": "^16.2.6",
+    "next": "^16.3.3",
     "ora": "^9.3.0",
     "parse5": "8.0.1",
     "quick-lru": "7.0.1",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "react-is": "^19.2.4",
     "react-markdown": "^10.1.0",
     "rehype-highlight": "^7.0.2",
     "rehype-raw": "^7.0.0",
@@ -262,7 +260,7 @@
     "remark-remove-comments": "^1.1.1",
     "remark-stringify": "^11.0.0",
     "semver": "^7.7.4",
-    "sharp": "0.35.3",
+    "sharp": "0.35.4",
     "slash": "^5.1.0",
     "strip-ansi": "7.1.0",
     "swr": "^2.4.0",
@@ -281,7 +279,7 @@
     "@axe-core/playwright": "^4.11.1",
     "@eslint/js": "^9.39.3",
     "@github/markdownlint-github": "^0.6.3",
-    "@graphql-inspector/core": "^7.1.2",
+    "@graphql-inspector/core": "^8.0.0",
     "@graphql-tools/load": "^8.1.8",
     "@octokit/rest": "22.0.0",
     "@playwright/test": "^1.60.0",
@@ -323,7 +321,7 @@
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-primer-react": "^9.0.0",
     "globals": "^17.3.0",
-    "gpt-tokenizer": "^3.4.0",
+    "gpt-tokenizer": "^4.0.0",
     "graphql": "^16.12.0",
     "http-status-code": "^2.1.0",
     "husky": "^9.1.7",
@@ -343,7 +341,7 @@
     "start-server-and-test": "^3.0.0",
     "unist-util-remove": "^4.0.0",
     "unist-util-visit-parents": "6.0.1",
-    "vitest": "^4.1.0",
+    "vitest": "^5.0.0",
     "website-scraper": "^5.3.1"
   },
   "overrides": {
@@ -367,10 +365,8 @@
     "minimatch@10": {
       "brace-expansion": "^5.0.8"
     },
-    "fast-uri": "^3.1.5"
-  },
-  "optionalDependencies": {
-    "esm": "^3.2.25"
+    "sharp": "$sharp",
+    "fast-uri": "^3.1.7"
   },
   "engines": {
     "node": "^24 || ^26"
